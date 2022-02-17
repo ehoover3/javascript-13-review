@@ -9,7 +9,7 @@
 
 // LEVEL 1a: data types
 let myString = "hello world";
-let myNumber = 5;
+let myNumber = 6;
 let myBoolean = true;
 let myArray = ["hi", "hola", "bonjour"];
 let myObject = { city: "New York City", state: "New York", population: 8419000 };
@@ -23,15 +23,30 @@ if (myNumber < 5) {
   console.log("myNumber is 5");
 }
 
-// LEVEL 1c: loops
+// LEVEL 1c: alternative way to write an if
+if (myNumber === 5) console.log("myNumber is 5");
+else console.log("other options");
+
+// LEVEL 1d: loops
 for (let i = 0; i < myArray.length; i++) {
   console.log(myArray[i]);
 }
 
-// LEVEL 1d: functions
+// LEVEL 1e: functions
 function addNumbers(a, b) {
   return a + b;
 }
+
+let sum = addNumbers(3, 7);
+console.log(sum);
+
+// LEVEL 1f: functions
+function multiplyNumbers(a, b = 10) {
+  return a * b;
+}
+
+let product = multiplyNumbers(5);
+console.log(product);
 
 ////////////////////////////////////
 //  _                    _   ___
@@ -59,6 +74,16 @@ function doTheThing() {
 
 myDiv.addEventListener("click", doTheThing);
 
+// extra example
+let colorDiv = document.querySelector("#color");
+
+function changeTheColor() {
+  if (colorDiv.style.backgroundColor === "green") colorDiv.style.backgroundColor = "lightblue";
+  else colorDiv.style.backgroundColor = "green";
+}
+
+colorDiv.addEventListener("mouseover", changeTheColor);
+
 ////////////////////////////////////
 //  _                    _   ____
 // | |                  | | |___ \
@@ -72,7 +97,7 @@ myDiv.addEventListener("click", doTheThing);
 // setTimeOut says:  run this code after this amount of time (in milliseconds)
 setTimeout(function () {
   console.log("run this code immediately"); // anonymous functions says: run immediately
-}, 1000);
+}, 2000);
 
 // LEVEL 3b:  arrow functions - option 1
 let answer2 = (a, b) => {
@@ -95,14 +120,13 @@ let answer3 = (a, b) => a * b;
 // LEVEL 4a: filter
 let spanishWords = myArray.filter((element) => element === "hola");
 let frenchWords = myArray.filter((element) => element === "bonjour");
+console.log(spanishWords);
 
 // LEVEL 4b: for each
 let consoleLogNames = myArray.forEach((element) => console.log(element));
 
 // LEVEL 4c: map
-let addName = myArray.map((element) => {
-  `${element} Paul`;
-});
+let addName = myArray.map((element) => `${element} Paul`);
 console.log(addName);
 
 ////////////////////////////////////
@@ -117,7 +141,7 @@ console.log(addName);
 // HTTP EXAMPLES + ASYNC/AWAIT
 // get, post, put, patch, delete
 
-// get example
+// LEVEL 5a:  fetch request with a get method
 const catDiv = document.querySelector("#catDiv");
 const catImg = document.querySelector("#catImg");
 const catBtn = document.querySelector("#catBtn");
@@ -133,11 +157,10 @@ catBtn.addEventListener("click", () => {
   getNewCatImg();
 });
 
-// get example with query parameters
+// LEVEL 5b:  fetch request with get method & query parameters
 // spread operator
-let randomWords1 = [];
 async function getRandomWords1() {
-  let count = 10;
+  let count = 3;
   let response = await fetch(`https://random-word-api.herokuapp.com/word?number=${count}`);
   let data = await response.json();
   console.log(data);
@@ -243,6 +266,10 @@ console.log(bio);
 // .reduce()
 
 //  Unit Testing
+
+//  Node Package Manager (npm)
+//  package.json
+//  package-lock.json
 
 //  Node Express
 //  Node:     to run Javascript outside of the browser
