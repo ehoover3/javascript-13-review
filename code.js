@@ -1,20 +1,26 @@
-////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 //  _                    _   __
 // | |                  | | /_ |
 // | |     _____   _____| |  | |
 // | |    / _ \ \ / / _ \ |  | |
 // | |___|  __/\ V /  __/ |  | |
 // |______\___| \_/ \___|_|  |_|
-////////////////////////////////////
+//
+// CONCEPT:                  DOCUMENTATION:
+// data types           ---> https://www.w3schools.com/js/js_datatypes.asp
+// if, else, & else if  ---> https://www.w3schools.com/js/js_if_else.asp
+// loops                ---> https://www.w3schools.com/js/js_loop_for.asp
+// functions            ---> https://www.w3schools.com/js/js_functions.asp
+////////////////////////////////////////////////////////////////////////////
 
-// LEVEL 1a: data types
+// DATA TYPES
 let myString = "hello world";
 let myNumber = 6;
 let myBoolean = true;
 let myArray = ["hi", "hola", "bonjour"];
 let myObject = { city: "New York City", state: "New York", population: 8419000 };
 
-// LEVEL 1b: if, else if, else
+// IF, ELSE, ELSE IF
 if (myNumber < 5) {
   console.log("myNumber is smaller than 5");
 } else if (myNumber > 5) {
@@ -23,16 +29,15 @@ if (myNumber < 5) {
   console.log("myNumber is 5");
 }
 
-// LEVEL 1c: alternative way to write an if
+// alternative way to write an if
 if (myNumber === 5) console.log("myNumber is 5");
-else console.log("other options");
 
-// LEVEL 1d: loops
+// LOOPS
 for (let i = 0; i < myArray.length; i++) {
   console.log(myArray[i]);
 }
 
-// LEVEL 1e: functions
+// FUNCTIONS
 function addNumbers(a, b) {
   return a + b;
 }
@@ -40,7 +45,6 @@ function addNumbers(a, b) {
 let sum = addNumbers(3, 7);
 console.log(sum);
 
-// LEVEL 1f: functions
 function multiplyNumbers(a, b = 10) {
   return a * b;
 }
@@ -48,33 +52,41 @@ function multiplyNumbers(a, b = 10) {
 let product = multiplyNumbers(5);
 console.log(product);
 
-////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
 //  _                    _   ___
 // | |                  | | |__ \
 // | |     _____   _____| |    ) |
 // | |    / _ \ \ / / _ \ |   / /
 // | |___|  __/\ V /  __/ |  / /_
 // |______\___| \_/ \___|_| |____|
-////////////////////////////////////
+//
+// CONCEPT:                  DOCUMENTATION:
+// createElement        ---> https://www.w3schools.com/jsref/met_document_createelement.asp
+// querySelector        ---> https://www.w3schools.com/jsref/met_document_queryselector.asp
+// append               ---> https://www.w3schools.com/jsref/met_node_appendchild.asp
+// event listener       ---> https://www.w3schools.com/js/js_htmldom_eventlistener.asp
+///////////////////////////////////////////////////////////////////////////////////////////
 
-// LEVEL 2a: createElement
-let myDiv = document.createElement("div");
+// CREATE ELEMENT
+let myDiv = document.createElement("div"); // <div></div>
 myDiv.classList.add("quotes");
 myDiv.setAttribute("id", "AvatarQuote");
 myDiv.textContent = "Zhu Li, do the thing!";
 
-// LEVEL 2b:  queryselector & appending divs
+// QUERY SELECTOR
 let rootDiv = document.querySelector("#root");
+
+// APPEND
 rootDiv.append(myDiv);
 
-// LEVEL 2c: event listeners
+// EVENT LISTENER
 function doTheThing() {
   console.log("Zhu Li, do the thing!");
 }
 
 myDiv.addEventListener("click", doTheThing);
 
-// extra example
+// bonus example
 let colorDiv = document.querySelector("#color");
 
 function changeTheColor() {
@@ -84,59 +96,104 @@ function changeTheColor() {
 
 colorDiv.addEventListener("mouseover", changeTheColor);
 
-////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
 //  _                    _   ____
 // | |                  | | |___ \
 // | |     _____   _____| |   __) |
 // | |    / _ \ \ / / _ \ |  |__ <
 // | |___|  __/\ V /  __/ |  ___) |
 // |______\___| \_/ \___|_| |____/
-////////////////////////////////////
+//
+// CONCEPT:                  DOCUMENTATION:
+// callback function    ---> https://www.w3schools.com/js/js_callback.asp
+// anonymous function   ---> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions *
+// set timeout          ---> https://www.w3schools.com/jsref/met_win_settimeout.asp
+// arrow functions      ---> https://www.w3schools.com/js/js_arrow_function.asp
+///////////////////////////////////////////////////////////////////////////////////////////
 
-// LEVEL 3a: anonymous functions & setTimeOut
+// LEVEL 3a:
+
+// CALLBACK FUNCTION
+// A callback function is a function passed into another function as an argument,
+// which is then invoked inside the outer function to complete some kind of routine or action
+
+// ANONYMOUS FUNCTION
+// runs as soon as it is defined
+
+// SET TIMEOUT
+// setTimeout() method sets a timer which executes a function or specified piece of code
+// once the timer expires.
+
 // setTimeOut says:  run this code after this amount of time (in milliseconds)
-setTimeout(function () {
-  console.log("run this code immediately"); // anonymous functions says: run immediately
+setTimeout(() => {
+  console.log("run this code immediately");
 }, 2000);
 
-// LEVEL 3b:  arrow functions - option 1
+// setTimeout( ()=> {console.log("run this code immediately")}, 2000);
+// setTimeout( ()=> console.log("run this code immediately"), 2000);
+
+// ARROW FUNCTIONS - option 1
+
 let answer2 = (a, b) => {
   return a * b;
 };
 
-// LEVEL 3c:  arrow functions - option 2
+// ARROW FUNCTIONS - option 2
 let answer3 = (a, b) => a * b;
 
-////////////////////////////////////
+// NOTE TO SELF:  ADD CALLBACK FUNCTION EXAMPLES HERE
+
+///////////////////////////////////////////////////////////////////////////////////////////
 //  _                    _   _  _
 // | |                  | | | || |
 // | |     _____   _____| | | || |_
 // | |    / _ \ \ / / _ \ | |__   _|
 // | |___|  __/\ V /  __/ |    | |
 // |______\___| \_/ \___|_|    |_|
-////////////////////////////////////
+//
+// CONCEPT:                  DOCUMENTATION:
+// filter method        ---> https://www.w3schools.com/jsref/jsref_filter.asp
+// forEach method       ---> https://www.w3schools.com/jsref/jsref_foreach.asp
+// map method           ---> https://www.w3schools.com/jsref/jsref_map.asp
+///////////////////////////////////////////////////////////////////////////////////////////
 
 // ARRAY HIGHER ORDER FUNCTIONS
-// LEVEL 4a: filter
-let spanishWords = myArray.filter((element) => element === "hola");
-let frenchWords = myArray.filter((element) => element === "bonjour");
-console.log(spanishWords);
+// let myArray = ["hi", "hola", "bonjour"];
 
-// LEVEL 4b: for each
-let consoleLogNames = myArray.forEach((element) => console.log(element));
+// FILTER
+let spanishWords = myArray.filter((word) => {
+  return word === "hola";
+});
+console.log(spanishWords); // expected return: ["hola"]
 
-// LEVEL 4c: map
-let addName = myArray.map((element) => `${element} Paul`);
+let notSpanishWords = myArray.filter((word) => {
+  return word !== "hola";
+});
+console.log(notSpanishWords); // expected return: ["hi", "bonjour"]
+
+// FOR EACH
+let consoleLogNames = myArray.forEach((word) => console.log(word));
+
+// MAP
+let addName = myArray.map((greeting) => `${greeting} Paul`);
 console.log(addName);
 
-////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
 //  _                    _   _____
 // | |                  | | | ____|
 // | |     _____   _____| | | |__
 // | |    / _ \ \ / / _ \ | |___ \
 // | |___|  __/\ V /  __/ |  ___) |
 // |______\___| \_/ \___|_| |____/
-////////////////////////////////////
+//
+// CONCEPT:                  DOCUMENTATION:
+// fetch API            ---> https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+// fetch, get method    ---> read data
+// fetch, post method   ---> create data
+// fetch, put method    ---> edit data (update/replace entire thing)
+// fetch, patch method  ---> edit data (update/replace specific thing)
+// fetch, delete method ---> deletes data
+///////////////////////////////////////////////////////////////////////////////////////////
 
 // HTTP EXAMPLES + ASYNC/AWAIT
 // get, post, put, patch, delete
@@ -160,7 +217,7 @@ catBtn.addEventListener("click", () => {
 // LEVEL 5b:  fetch request with get method & query parameters
 // spread operator
 async function getRandomWords1() {
-  let count = 3;
+  let count = 10;
   let response = await fetch(`https://random-word-api.herokuapp.com/word?number=${count}`);
   let data = await response.json();
   console.log(data);
@@ -168,7 +225,7 @@ async function getRandomWords1() {
 getRandomWords1();
 
 // POST EXAMPLE
-const data = { username: "example" };
+const data = { superhero: "Batman" };
 
 // fetch(`https://example.com/profile`, {
 //   method: "POST",
@@ -217,6 +274,11 @@ let id = 1;
 // |  _ < / _ \| '_ \| | | / __| | |    / _ \ \ / / _ \ |
 // | |_) | (_) | | | | |_| \__ \ | |___|  __/\ V /  __/ |
 // |____/ \___/|_| |_|\__,_|___/ |______\___| \_/ \___|_|
+//
+// CONCEPT:                  DOCUMENTATION:
+// ternary              ---> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+// spread operator      ---> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+// rest operator        ---> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 //////////////////////////////////////////////////////////
 
 // BONUS STUFF
@@ -244,7 +306,7 @@ function myBio(firstName, lastName, ...otherInfo) {
   return otherInfo;
 }
 
-let bio = myBio("Bruce", "Wayne", "Gotham", "Bat Cave");
+let bio = myBio("Bruce", "Wayne", "Gotham", "Bat Cave", "batmobile", "robin", "alfred");
 console.log(bio);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
