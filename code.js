@@ -16,6 +16,8 @@
 // DATA TYPES
 let myString = "hello world";
 let myNumber = 6;
+// ... floats    1.22342342343242394239849832749823749823482374
+// ... integers  1, 2, 3, -10000000, 42
 let myBoolean = true;
 let myArray = ["hi", "hola", "bonjour"];
 let myObject = { city: "New York City", state: "New York", population: 8419000 };
@@ -69,9 +71,9 @@ console.log(product);
 
 // CREATE ELEMENT
 let myDiv = document.createElement("div"); // <div></div>
-myDiv.classList.add("quotes");
-myDiv.setAttribute("id", "AvatarQuote");
-myDiv.textContent = "Zhu Li, do the thing!";
+myDiv.classList.add("quotes"); //  <div class="quotes"></div>
+myDiv.setAttribute("id", "AvatarQuote"); // <div class="quotes" id="AvatarQuote"></div>
+myDiv.textContent = "Zhu Li, do the thing!"; // <div class="quotes" id="AvatarQuote">Zhu Li, do the thing!</div>
 
 // QUERY SELECTOR
 let rootDiv = document.querySelector("#root");
@@ -119,23 +121,20 @@ let answer2 = (a, b) => {
 // ARROW FUNCTIONS - option 2
 let answer3 = (a, b) => a * b;
 
-// CALLBACK FUNCTION
-// A callback function is a function passed into another function as an argument,
-// which is then invoked inside the outer function to complete some kind of routine or action
-
 // ANONYMOUS FUNCTION
 // runs as soon as it is defined
 () => console.log("run this code immediately");
+
+// CALLBACK FUNCTION
+// A callback function is a function passed into another function as an argument,
+// which is then invoked inside the outer function to complete some kind of routine or action
 
 // SET TIMEOUT
 // setTimeout() method sets a timer which executes a function or specified piece of code
 // once the timer expires.
 
 // setTimeOut says:  run this code after this amount of time (in milliseconds)
-setTimeout(
-  () => console.log("run this code immediately, but setTimeout makes it wait 2 seconds first"),
-  2000
-);
+setTimeout(() => console.log("run code"), 2000);
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 //  _                    _   _  _
