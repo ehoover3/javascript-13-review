@@ -105,35 +105,13 @@ colorDiv.addEventListener("mouseover", changeTheColor);
 // |______\___| \_/ \___|_| |____/
 //
 // CONCEPT:                  DOCUMENTATION:
+// arrow functions      ---> https://www.w3schools.com/js/js_arrow_function.asp
 // callback function    ---> https://www.w3schools.com/js/js_callback.asp
 // anonymous function   ---> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions *
 // set timeout          ---> https://www.w3schools.com/jsref/met_win_settimeout.asp
-// arrow functions      ---> https://www.w3schools.com/js/js_arrow_function.asp
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-// LEVEL 3a:
-
-// CALLBACK FUNCTION
-// A callback function is a function passed into another function as an argument,
-// which is then invoked inside the outer function to complete some kind of routine or action
-
-// ANONYMOUS FUNCTION
-// runs as soon as it is defined
-
-// SET TIMEOUT
-// setTimeout() method sets a timer which executes a function or specified piece of code
-// once the timer expires.
-
-// setTimeOut says:  run this code after this amount of time (in milliseconds)
-setTimeout(() => {
-  console.log("run this code immediately");
-}, 2000);
-
-// setTimeout( ()=> {console.log("run this code immediately")}, 2000);
-// setTimeout( ()=> console.log("run this code immediately"), 2000);
-
 // ARROW FUNCTIONS - option 1
-
 let answer2 = (a, b) => {
   return a * b;
 };
@@ -141,7 +119,23 @@ let answer2 = (a, b) => {
 // ARROW FUNCTIONS - option 2
 let answer3 = (a, b) => a * b;
 
-// NOTE TO SELF:  ADD CALLBACK FUNCTION EXAMPLES HERE
+// CALLBACK FUNCTION
+// A callback function is a function passed into another function as an argument,
+// which is then invoked inside the outer function to complete some kind of routine or action
+
+// ANONYMOUS FUNCTION
+// runs as soon as it is defined
+() => console.log("run this code immediately");
+
+// SET TIMEOUT
+// setTimeout() method sets a timer which executes a function or specified piece of code
+// once the timer expires.
+
+// setTimeOut says:  run this code after this amount of time (in milliseconds)
+setTimeout(
+  () => console.log("run this code immediately, but setTimeout makes it wait 2 seconds first"),
+  2000
+);
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 //  _                    _   _  _
